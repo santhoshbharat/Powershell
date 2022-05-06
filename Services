@@ -1,0 +1,10 @@
+write-host " $env:Computername "
+$ServiceName = "BITS"
+$ServiceStatus = (Get-Service -Name $ServiceName).status
+if($ServiceStatus -eq "Running")
+{
+   Write-Host "Running"
+}
+else {
+   Write-Host "Stopped"
+}
